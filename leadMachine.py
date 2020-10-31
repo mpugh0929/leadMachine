@@ -5,15 +5,15 @@ from tkinter import ttk
 def sendText():
     try:
         from twilio.rest import Client
-        account_sid = 'AC7b66cb11605b92ce428bc790874f01da'
-        auth_token = '09c7b1b91613c41b2154389dce03658b'
+        account_sid = 'You will insert your account SID here'
+        auth_token = 'You will insert your account authentication token here'
         client = Client(account_sid, auth_token)
         global e
         number = e.get()
         message = client.messages \
         .create(
-        body="Hi I am Matt's robot!",
-        from_='+13215783097',
+        body="Message for text",
+        from_='Put your Twilio phone number here',
         to=number)
         tkinter.messagebox.showinfo(title="Success", message="Text Sent!")
     except:
